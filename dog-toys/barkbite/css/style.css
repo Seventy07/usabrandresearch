@@ -1,0 +1,552 @@
+@font-face {
+    font-family: 'Benton Sans';
+    src: url('../fonts/benton-sans-light.eot');
+    src: url('../fonts/benton-sans-light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/benton-sans-light.woff2') format('woff2'),
+        url('../fonts/benton-sans-light.woff') format('woff'),
+        url('../fonts/benton-sans-light.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Benton Sans';
+    src: url('../fonts/benton-sans-regular.eot');
+    src: url('../fonts/benton-sans-regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/benton-sans-regular.woff2') format('woff2'),
+        url('../fonts/benton-sans-regular.woff') format('woff'),
+        url('../fonts/benton-sans-regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Benton Sans';
+    src: url('../fonts/benton-sans-bold.eot');
+    src: url('../fonts/benton-sans-bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/benton-sans-bold.woff2') format('woff2'),
+        url('../fonts/benton-sans-bold.woff') format('woff'),
+        url('../fonts/benton-sans-bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* CLEARFIX */
+
+.clearfix:before,
+.clearfix:after {
+    content:"";
+    display:table;
+}
+.clearfix:after {
+    clear:both;
+}
+/* For IE 6/7 (trigger hasLayout) */
+.clearfix {
+    zoom:1;
+}
+
+/* STYLE */
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Benton Sans', sans-serif;
+	line-height: 1.4;
+	font-weight: 200;
+	color: #221d1d;
+	font-size: 16px;
+}
+
+.header {
+	background: #1d4d7a;
+	text-align: center;
+}
+
+.header > p {
+	font-size: 0.75rem;
+	padding: 10px 5px;
+	color: #fff;
+}
+
+.bold {
+	font-weight: 700;
+}
+
+.bottom-header {
+	background: #f7f7f8;
+}
+
+.header-left {
+	height: 40px;
+	float: left;
+}
+
+.header-left > * {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.header-left span {
+	width: 1px;
+	height: 18px;
+	background: #e0dad5;
+}
+
+.vs1 {
+	width: 107px;
+	height: 40px;
+	background: url(../images/vs1.jpg) no-repeat center -1px;
+	border-bottom: 3px solid #f4c6cf;
+}
+
+.vs2 {
+	width: 84px;
+	height: 40px;
+	background: url(../images/vs2.jpg) no-repeat center;
+}
+
+.header-right {
+	float: right;
+	height: 40px;
+	width: 117px;
+	background: url(../images/vs3.jpg) no-repeat center;
+}
+
+.logo {
+	display: block;
+	max-width: 70%;
+	height: auto;
+	margin: 20px auto;
+}
+
+.line {
+	height: 1px;
+	background: #e0dad5;
+	width: 90%;
+	margin: 0 auto 20px;
+}
+
+.wrapper {
+	padding: 0 10px;
+	max-width: 520px;
+	margin: 0 auto;
+}
+
+.wrapper h1 {
+	text-align: center;
+	font-weight: 200;
+	text-transform: uppercase;
+	font-size: 1.75rem;
+	margin-bottom: 15px;
+}
+
+.txt {
+	line-height: 1.6;
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+.giftcard-img {
+	max-width: 340px;
+	width: 100%;
+	height: auto;
+	margin: 15px auto;
+	display: block;
+}
+
+.quiz-box, .final-box {
+	position: relative;
+	border: 1px solid #e0dad5;
+	padding: 20px 10px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+	margin: 25px auto 0;
+}
+
+.quiz-title, .loading {
+	position: absolute;
+	top: -8px;
+	left: 10px;
+	font-size: 0.75rem;
+	background: #fff;
+	padding: 2px 5px;
+	line-height: 1;
+	display: inline-block;
+}
+
+.question, .final-box, .comments {
+	display: none;
+}
+
+.question.start {
+	display: block;
+}
+
+.question p {
+	font-size: 1.25rem;
+	font-weight: 900;
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+.question button, .cta {
+	text-align: center;
+	text-decoration: none;
+	margin-top: 10px;
+	display: block;
+	background: #00abd6;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	font-family: 'Benton Sans', sans-serif;
+	font-size: 1rem;
+	text-transform: uppercase;
+	width: 100%;
+	border: 0;
+	padding: 14px 24px;
+	color: #000;
+	cursor: pointer;
+	font-weight: 900;
+}
+
+.small-txt {
+	font-size: 0.875rem;
+	text-align: center;
+	margin-top: 5px;
+}
+
+.footer {
+	background: #f5f5f6;
+	color: #000;
+	font-size: 0.625rem;
+	padding: 30px 25px;
+	margin-top: 25px;
+}
+
+.loading-box {
+	display: none;
+	text-align: center;
+	position: relative;
+	border: 1px solid #e0dad5;
+	padding: 10px 15px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+	margin: 25px auto 0;
+	min-height: 200px;
+	line-height: 200px;
+	background: url(../images/logo-bg.png) no-repeat center;
+}
+
+.loading-box ul {
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 1;
+}
+
+.loading-box ul li {
+	font-size: 1.25rem;
+	line-height: 1.45;
+	display: none;
+}
+
+.loading-box ul li:first-child {
+	display: block;
+}
+
+.congrats {
+	font-size: 1.625rem;
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: 400;
+	margin-bottom: 20px;
+}
+
+.final-txt {
+	line-height: 1.65;
+	margin-bottom: 15px;
+}
+
+/* COMMENTS */
+
+.comments {
+	font-weight: 400;
+	font-family: 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
+	font-size: 13px;
+	line-height: 1.3;
+	text-align: left;
+	margin: 0 auto;
+	padding: 5px 10px 20px;
+	margin-top: 20px;
+}
+
+.top-comments {
+	padding: 0 5px 5px;
+	border-bottom: 1px solid #e9ebee;
+	font-size: 14px;
+	margin-bottom: 20px;
+}
+
+.top-comments > * {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.fb-title {
+	font-weight: 700;
+}
+
+.fb-sort {
+	margin: 0 8px;
+}
+
+.fb-newest {
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	text-decoration: none;
+	font-size: 12px;
+	color: #4b4f56;
+	border: 1px solid #ced0d4;
+	background: #f6f7f9;
+	padding: 0 11px;
+	line-height: 24px;
+	font-weight: 700;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+
+.fb-newest:hover {
+	background: #e9ebee;
+}
+
+.fb-your-comment {
+	position: relative;
+	padding: 5px 0 5px 55px;
+	min-height: 60px;
+	font-family: Tahoma, 'Helvetica', 'Helvetica Neue', sans-serif;
+}
+
+.fb-your-comment > img, .fb-comment > img {
+	position: absolute;
+	display: block;
+	top: 5px;
+	left: 0;
+}
+
+.fb-login {
+	border: 1px solid #d3d6db;
+}
+
+.fb-comment-eppereance {
+	border-bottom: 1px solid #d3d6db;
+	background: #fafafa;
+	font-size: 11px;
+	padding: 8px;
+	color: #90949c;
+}
+
+.fb-action {
+	background: #f6f7f9;
+	padding: 8px;
+	text-align: right;
+}
+
+.fb-action button {
+	background: #9cb4d8;
+	border: 0;
+	font-size: 14px;
+	font-family: 'Helvetica', 'Helvetica Neue', sans-serif;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	line-height: 24px;
+	padding: 0 8px;
+	font-weight: 700;
+	color: #fff;
+	cursor: wait;
+	outline: 0;
+}
+
+.fb-comment {
+	padding: 5px 0 5px 60px;
+	margin-top: 5px;
+	position: relative;
+	min-height: 60px;
+	display: none;
+}
+
+.fb-name {
+	color: #3b5998;
+	font-size: 14px;
+	line-height: 1.4;
+	margin-right: 2px;
+	display: inline-block;
+	vertical-align: middle;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.fb-name:hover, .fb-about:hover {
+	text-decoration: underline;
+}
+
+.fb-about {
+	color: #90949c;
+	vertical-align: middle;
+	text-decoration: none;
+	margin-left: 2px;
+}
+
+.fb-comment-txt {
+	margin: 4px 0 6px;
+}
+
+.fb-bottom-details {
+	margin-top: 6px;
+	font-family: Tahoma, 'Helvetica', 'Helvetica Neue', sans-serif;
+	color: #90949c;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.fb-bottom-details > a {
+	color: #3b5998;
+	text-decoration: none;
+}
+
+.fb-total-likes:after {
+	content: " · ";
+	display: inline-block;
+	margin-left: 5px;
+}
+
+.fb-total-likes {
+	padding-left: 19px;
+	background: url(../images/like.png) no-repeat -33px -170px;
+}
+
+.fb-time {
+	border-bottom: 1px dotted #999;
+	cursor: help;
+}
+
+.fb-hide-like {
+	display: none !important;
+}
+
+.fb-img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+.fb-show-comment {
+	display: block;
+}
+
+.fb-load-more {
+	margin-top: 10px;
+	padding: 10px 0;
+	border-bottom: 1px solid #e6e8eb
+}
+
+.fb-load-more button {
+	display: block;
+	width: 100%;
+	color: #fff;
+	text-align: center;
+	background: #4080ff;
+	border: 0;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	font-weight: 700;
+	padding: 12px;
+	font-size: 14px;
+	font-family: 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
+	cursor: pointer;
+	outline: 0;
+}
+
+.fb-plugin {
+	color: #3b5998;
+	padding: 0 3px;
+	line-height: 24px;
+	font-size: 11px;
+	font-family: Tahoma, 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.fb-plugin i {
+	display: inline-block;
+	vertical-align: middle;
+	background: url(../images/like.png) no-repeat 0 -187px;
+	width: 15px;
+	height: 15px;
+}
+
+.fb-loader {
+	display: none;
+	margin: 0 auto;
+	-webkit-animation: rotateSpinner 1.2s linear infinite;
+	-moz-animation: rotateSpinner 1.2s linear infinite;
+    animation: rotateSpinner 1.2s linear infinite;
+}
+
+@-webkit-keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+@-moz-keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
